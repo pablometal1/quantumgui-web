@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pablometal1.github.io/quantumgui-web/sitemap.xml

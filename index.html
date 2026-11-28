@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es" data-mode="light" data-seed="violet">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="968Xw9a7jzFB9jtKG7MtqIJo7MfvllQdoAVxWErLmFM" />
+  <title>QuantumGUI — Material Design 3 Nativo en GPU para Python</title>
+  <meta name="description" content="QuantumGUI es una librería GUI nativa para Python acelerada por GPU (Skia + GLFW), 100% Material Design 3 con 96 controles, 4,304 íconos y cero dependencias de Qt o Tkinter." />
+  <link rel="canonical" href="https://pablometal1.github.io/quantumgui-web/" />
+  <meta property="og:title" content="QuantumGUI — Material Design 3 Nativo en GPU para Python" />
+  <meta property="og:description" content="Interfaces Material Design 3 nativas en GPU para Python con Skia + GLFW, 96 controles y 4,304 íconos. pip install quantumgui." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pablometal1.github.io/quantumgui-web/" />
+  <link rel="stylesheet" href="styles.css?v=4" />
+  <script src="app.js?v=4" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a href="index.html" class="brand">
+      <span class="brand-badge">Q</span>
+      <span>QuantumGUI</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.html" class="nav-link active">Inicio</a>
+      <a href="tutorials.html" class="nav-link">Tutoriales</a>
+      <a href="docs.html" class="nav-link">Documentación API</a>
+      <a href="roadmap.html" class="nav-link">Roadmap</a>
+      <a href="#donate" class="nav-link">Donar</a>
+    </nav>
+
+    <div class="theme-controls">
+      <div class="seed-dots" title="Color dinámico M3 (Seed)">
+        <button class="seed-dot active" data-seed="violet" style="background:#6750A4" aria-label="Violeta M3"></button>
+        <button class="seed-dot" data-seed="ocean" style="background:#0061A4" aria-label="Océano"></button>
+        <button class="seed-dot" data-seed="emerald" style="background:#006D3B" aria-label="Esmeralda"></button>
+        <button class="seed-dot" data-seed="terracotta" style="background:#9C4146" aria-label="Terracota"></button>
+      </div>
+      <button id="modeToggle" class="icon-btn" aria-label="Alternar modo oscuro">☾</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div>
+        <span class="pill-tag">v1.2.3 · Skia GPU + GLFW · 100% Material Design 3 + M3 Expressive</span>
+        <h1>Interfaces <span>Material Design 3</span> nativas en GPU para Python.</h1>
+        <p>
+          QuantumGUI renderiza cada píxel directamente en la GPU usando <strong>Skia</strong>, sin navegador ni WebView,
+          con paletas dinámicas HCT y una sintaxis <code>with</code> limpia y reactiva.
+        </p>
+
+        <div class="hero-actions">
+          <a href="docs.html" class="btn btn-filled">Explorar API</a>
+          <a href="#install" class="btn btn-tonal">Cómo instalar</a>
+          <a href="docs.html#theme" class="btn btn-outlined">Sistema de Temas M3</a>
+        </div>
+
+        <div class="install-box">
+          <span>pip install quantumgui</span>
+          <button class="copy-btn" data-copy="pip install quantumgui">Copiar</button>
+        </div>
+      </div>
+
+      <div class="code-card">
+        <div class="code-header">
+          <span>app.py</span>
+          <span>Python 3.11+</span>
+        </div>
+        <pre><code><span class="kw">from</span> quantumgui <span class="kw">import</span> Theme, ui
+
+theme = <span class="fn">Theme</span>(<span class="arg">seed</span>=<span class="str">"#6750A4"</span>, <span class="arg">mode</span>=<span class="str">"dark"</span>)
+nombre = ui.<span class="fn">state</span>(<span class="str">""</span>)
+
+<span class="kw">with</span> ui.<span class="fn">window</span>(<span class="str">"Mi App"</span>, <span class="arg">theme</span>=theme) <span class="kw">as</span> win:
+    <span class="kw">with</span> ui.<span class="fn">column</span>(<span class="arg">gap</span>=<span class="num">16</span>).<span class="fn">padding</span>(<span class="num">24</span>):
+        ui.<span class="fn">text</span>(<span class="str">"Bienvenido"</span>, <span class="arg">role</span>=<span class="str">"headline_medium"</span>)
+
+        ui.<span class="fn">text_field</span>(
+            <span class="str">"Tu nombre"</span>,
+            <span class="arg">variant</span>=<span class="str">"outlined"</span>,
+            <span class="arg">leading_icon</span>=<span class="str">"person"</span>,
+            <span class="arg">bind</span>=nombre,
+        ).<span class="fn">fill_width</span>()
+
+        ui.<span class="fn">button</span>(
+            <span class="str">"Saludar"</span>,
+            <span class="arg">variant</span>=<span class="str">"filled"</span>,
+            <span class="arg">on_click</span>=<span class="kw">lambda</span>: ui.<span class="fn">snackbar</span>(<span class="str">f"Hola {nombre.value}!"</span>),
+        )
+
+win.<span class="fn">run</span>()</code></pre>
+      </div>
+    </section>
+
+    <!-- Quick Install -->
+    <section id="install" class="section">
+      <h2 class="section-title">Instalación rápida</h2>
+      <p class="section-sub">Requiere Python 3.11+ · Cero dependencias de Tkinter, Qt, GTK ni WebView.</p>
+
+      <div class="grid-4" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+        <article class="m3-card elevated">
+          <span class="card-chip">Recomendado · PyPI</span>
+          <h3>Instalación estándar</h3>
+          <p>Instala QuantumGUI con el motor GPU Skia + GLFW y los 4,304 íconos Material Symbols incluidos.</p>
+          <div class="install-box" style="margin-top: 12px; width: 100%; justify-content: space-between;">
+            <span>pip install quantumgui</span>
+            <button class="copy-btn" data-copy="pip install quantumgui">Copiar</button>
+          </div>
+        </article>
+
+        <article class="m3-card elevated">
+          <span class="card-chip">Empaquetado .EXE</span>
+          <h3>Con soporte PyInstaller</h3>
+          <p>Incluye herramientas opcionales para compilar tus aplicaciones QuantumGUI a ejecutables nativos independientes.</p>
+          <div class="install-box" style="margin-top: 12px; width: 100%; justify-content: space-between;">
+            <span>pip install "quantumgui[build]"</span>
+            <button class="copy-btn" data-copy='pip install "quantumgui[build]"'>Copiar</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="section">
+      <h2 class="section-title">Diseñada desde cero para Material Design 3</h2>
+      <p class="section-sub">Sin CSS improvisado ni wrappers pesados: tokens oficiales, GPU nativa y API pythónica.</p>
+
+      <div class="grid-4">
+        <article class="m3-card elevated">
+          <span class="card-chip">GPU Nativa</span>
+          <h3>Motor Skia + GLFW</h3>
+          <p>El mismo motor 2D acelerado por GPU que impulsa Flutter y Android. ~15 MB de dependencias, 60-120 FPS y soporte HiDPI.</p>
+        </article>
+
+        <article class="m3-card elevated">
+          <span class="card-chip">Color Dinámico</span>
+          <h3>Paletas HCT Automáticas</h3>
+          <p>A partir de un solo color <code>seed</code>, genera los 30+ roles oficiales de M3 (incluyendo <code>surface_container_*</code>) en claro y oscuro.</p>
+        </article>
+
+        <article class="m3-card elevated">
+          <span class="card-chip">Sintaxis with</span>
+          <h3>Pythónica y Reactiva</h3>
+          <p>Árbol declarativo con bloques <code>with</code>, modificadores encadenables tipados (<code>.padding()</code>, <code>.fill_width()</code>) y <code>ui.state()</code>.</p>
+        </article>
+
+        <article class="m3-card elevated">
+          <span class="card-chip">Catálogo M3</span>
+          <h3>97 Componentes + 4,304 Íconos Variables</h3>
+          <p>DataGrid virtualizado (100k filas), Gráficos GPU, AppBar, NavigationDrawer, FAB, Dialogs con scrim, DatePicker, PDF/Excel y más.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Interactive Playground Strip -->
+    <section id="playground" class="section">
+      <div class="playground">
+        <div>
+          <span class="pill-tag">Prueba el tema en esta misma web</span>
+          <h2 class="section-title">Un solo <code>seed</code>, toda la app transformada</h2>
+          <p class="section-sub" style="margin-bottom: 18px;">
+            Cambiá los círculos de color en la barra superior o activá el modo oscuro para ver cómo responden los tokens de superficie, contenedor y acento.
+          </p>
+          <a href="docs.html" class="btn btn-filled">Ir a la referencia completa de la API →</a>
+        </div>
+
+        <div class="demo-widget-box">
+          <strong>Componentes interactivos M3</strong>
+          <div class="demo-chips">
+            <button class="chip selected" data-toggle data-label="Python">✓ Python</button>
+            <button class="chip selected" data-toggle data-label="Skia GPU">✓ Skia GPU</button>
+            <button class="chip" data-toggle data-label="Material 3">Material 3</button>
+            <button class="chip" data-toggle data-label="HCT Theme">HCT Theme</button>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:4px;">
+            <a href="docs.html#button" class="btn btn-filled" style="height:36px; padding:0 18px;">Filled</a>
+            <a href="docs.html#button" class="btn btn-tonal" style="height:36px; padding:0 18px;">Tonal</a>
+            <a href="docs.html#button" class="btn btn-outlined" style="height:36px; padding:0 18px;">Outlined</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Donate / Support -->
+    <section id="donate" class="section">
+      <div class="playground" style="align-items: center;">
+        <div>
+          <span class="pill-tag">Apoyá el proyecto</span>
+          <h2 class="section-title">Impulsá el desarrollo de QuantumGUI</h2>
+          <p class="section-sub" style="margin-bottom: 16px;">
+            ¿QuantumGUI te ahorró tiempo en tus proyectos? Podés apoyar su desarrollo continuo ingresando el importe que desees vía PayPal. ¡Cada aporte suma para seguir creando más controles y mejoras!
+          </p>
+          <a href="https://www.facebook.com/Quantum.CORP.1788" target="_blank" rel="noopener noreferrer" class="btn btn-tonal" style="height: 40px; padding: 0 18px; display: inline-flex; align-items: center; gap: 8px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+            Consultas y contacto en Facebook
+          </a>
+        </div>
+
+        <div class="demo-widget-box" style="min-width: 280px; width: 100%; max-width: 400px; align-items: center; text-align: center;">
+          <strong>Donación segura con PayPal</strong>
+          <div style="margin-top: 8px;">
+            <style>.pp-VGUK47RAU3GQQ{text-align:center;border:none;border-radius:0.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
+            <form action="https://www.paypal.com/ncp/payment/VGUK47RAU3GQQ" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
+              <input class="pp-VGUK47RAU3GQQ" type="submit" value="Donar" />
+              <img src="https://www.paypalobjects.com/images/Debit_Credit.svg" alt="cards" />
+              <section style="font-size: 0.75rem;"> Con la tecnología de <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;" /></section>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    QuantumGUI · Librería GUI nativa Material Design 3 para Python · <a href="docs.html">Documentación API</a> · <a href="https://www.facebook.com/Quantum.CORP.1788" target="_blank" rel="noopener noreferrer">Contacto y consultas</a>
+  </footer>
+</body>
+</html>

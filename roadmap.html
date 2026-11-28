@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es" data-mode="light" data-seed="violet">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roadmap — QuantumGUI</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a href="index.html" class="brand">
+      <span class="brand-badge">Q</span>
+      <span>QuantumGUI</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.html" class="nav-link">Inicio</a>
+      <a href="tutorials.html" class="nav-link">Tutoriales</a>
+      <a href="docs.html" class="nav-link">Documentación API</a>
+      <a href="roadmap.html" class="nav-link active">Roadmap</a>
+    </nav>
+
+    <div class="theme-controls">
+      <div class="seed-dots" title="Color dinámico M3 (Seed)">
+        <button class="seed-dot active" data-seed="violet" style="background:#6750A4" aria-label="Violeta M3"></button>
+        <button class="seed-dot" data-seed="ocean" style="background:#0061A4" aria-label="Océano"></button>
+        <button class="seed-dot" data-seed="emerald" style="background:#006D3B" aria-label="Esmeralda"></button>
+        <button class="seed-dot" data-seed="terracotta" style="background:#9C4146" aria-label="Terracota"></button>
+      </div>
+      <button id="modeToggle" class="icon-btn" aria-label="Alternar modo oscuro">☾</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="roadmap-hero">
+      <span class="pill-tag">Hoja de ruta pública · v0.1 → v2.0</span>
+      <h1>Roadmap de QuantumGUI</h1>
+      <p>
+        Seguimiento transparente de la evolución de <strong>QuantumGUI</strong> hacia la librería GUI
+        <strong>Material Design 3</strong> más completa y potente en GPU para escritorio.
+      </p>
+
+      <div class="roadmap-progress-card">
+        <div class="progress-meta">
+          <span>Progreso actual de la plataforma</span>
+          <span>13 de 13 fases completadas (100%) · v1.0.0 · 95+ controles M3 + Suite Empresarial + CLI</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" style="width: 100%;"></div>
+        </div>
+      </div>
+
+      <div class="roadmap-filters">
+        <button class="chip selected" data-filter="all">Todas las fases (13)</button>
+        <button class="chip" data-filter="done">✓ Completadas (13)</button>
+      </div>
+    </section>
+
+    <section class="roadmap-timeline">
+      <!-- Fase 1 -->
+      <article class="phase-card" data-status="done">
+        <div class="phase-header">
+          <h2>Fase 1 — Núcleo GPU (Skia) y Motor de Temas M3</h2>
+          <span class="status-pill status-done">✓ Completado</span>
+        </div>
+        <ul class="milestone-list">
+          <li><span class="check-dot done">✓</span><span><strong>Ventana nativa GPU:</strong> GLFW + OpenGL + Skia con soporte HiDPI y scroll.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>Color Dinámico HCT:</strong> 6 paletas tonales y 30+ roles M3 en claro/oscuro.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>Tokens Oficiales:</strong> Escala tipográfica, Shape, Elevation y State Layers + Ripple.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>API Pythónica:</strong> Bloques <code>with</code>, modificadores encadenables y <code>ui.state()</code>.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>Widgets base:</strong> <code>Column</code>, <code>Row</code>, <code>Card</code>, <code>Text</code>, <code>Button</code> (5 variantes), <code>Switch</code> y <code>TextField</code>.</span></li>
+        </ul>
+      </article>
+
+      <!-- Fase 2 -->
+      <article class="phase-card" data-status="done">
+        <div class="phase-header">
+          <h2>Fase 2 — Controles de Formulario Material Design 3</h2>
+          <span class="status-pill status-done">✓ Completado</span>
+        </div>
+        <ul class="milestone-list">
+          <li><span class="check-dot done">✓</span><span><strong>Checkbox:</strong> Animado con estado indeterminado <code>tristate</code> y error.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>RadioGroup:</strong> Selección exclusiva vertical u horizontal.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>Slider:</strong> Arrastrable continuo o discreto (<code>step</code>) con burbuja flotante.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>Select:</strong> Desplegable expuesto M3 con menú flotante en capa <em>overlay</em>.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>Chip:</strong> Variantes <code>filter</code>, <code>assist</code>, <code>input</code> y <code>suggestion</code> con Ripple.</span></li>
+        </ul>
+      </article>
+
+      <!-- Fase 3 -->
+      <article class="phase-card" data-status="done">
+        <div class="phase-header">
+          <h2>Fase 3 — Navegación, AppBar, FAB y Overlays</h2>
+          <span class="status-pill status-done">✓ Completado</span>
+        </div>
+        <ul class="milestone-list">
+          <li><span class="check-dot done">✓</span><span><strong>TopAppBar:</strong> Barra superior M3 de 64dp con acciones a la derecha vía <code>with</code>.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>NavigationRail, NavigationBar &amp; NavigationDrawer:</strong> Navegación lateral, inferior y cajón modal.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>FAB &amp; IconButton:</strong> Tamaños <code>small</code>, <code>medium</code>, <code>large</code> y Extended FAB.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>Dialog &amp; Snackbar:</strong> Diálogo modal con <em>scrim</em> (28dp) y notificaciones no modales.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>ProgressIndicator &amp; Divider:</strong> Progreso lineal y circular (determinado e indeterminado).</span></li>
+        </ul>
+      </article>
+
+      <!-- Fase 4 -->
+      <article class="phase-card" data-status="done">
+        <div class="phase-header">
+          <h2>Fase 4 — UX de Escritorio y Componentes de Datos</h2>
+          <span class="status-pill status-done">✓ Completado</span>
+        </div>
+        <ul class="milestone-list">
+          <li><span class="check-dot done">✓</span><span><strong>Cursores nativos y teclado:</strong> <code>pointer</code>, <code>ibeam</code>, <code>ew_resize</code>, <code>Tab</code>/<code>Shift+Tab</code> y focus trapping.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>TextField pro &amp; Fuentes:</strong> Selección por mouse/Shift y <code>ui.load_font(.ttf/.otf)</code>.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>Tabs &amp; Tooltips:</strong> Pestañas animadas y <code>.tooltip()</code> en cualquier widget.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>DatePicker &amp; TimePicker:</strong> Calendario M3 y dial analógico 24h/12h AM-PM.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>DataTable &amp; Lists:</strong> 12 tipos de datos (incluyendo imágenes/avatares) y <code>ListView</code> de 1/2/3 líneas.</span></li>
+        </ul>
+      </article>
+
+      <!-- Fase 5 -->
+      <article class="phase-card" data-status="done">
+        <div class="phase-header">
+          <h2>Fase 5 — Componentes M3 Avanzados</h2>
+          <span class="status-pill status-done">✓ Completado</span>
+        </div>
+        <ul class="milestone-list">
+          <li><span class="check-dot done">✓</span><span><strong>BottomSheet:</strong> Panel deslizante inferior modal con esquinas 28dp y <em>drag handle</em>.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>Menu contextual:</strong> Menú desplegable M3 con íconos, atajos y <code>.open_at(x, y)</code>.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>SegmentedButton &amp; Badge:</strong> Botones segmentados (simple/múltiple) y badges de punto/contador.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>SearchBar:</strong> Barra de búsqueda M3 en forma <em>pill</em> con escritura en vivo y limpieza rápida.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>Image &amp; ScrollView:</strong> Imagen GPU (<code>cover</code> / <code>contain</code> / <code>fill</code>) y contenedor scrollable con scrollbar M3.</span></li>
+        </ul>
+      </article>
+
+      <!-- Fase 6 -->
+      <article class="phase-card" data-status="done">
+        <div class="phase-header">
+          <h2>Fase 6 — Datos, Gráficos GPU (13 tipos) y Entradas Avanzadas</h2>
+          <span class="status-pill status-done">✓ Completado</span>
+        </div>
+        <ul class="milestone-list">
+          <li><span class="check-dot done">✓</span><span><strong>Gráficos nativos GPU (12 tipos):</strong> <code>Line</code>, <code>Bar</code>, <code>HorizontalBar</code>, <code>Donut</code>, <code>Gauge</code>, <code>MultiLine</code>, <code>Heatmap</code>, <code>Radar</code>, <code>Scatter</code>, <code>Funnel</code>, <code>Candlestick</code> y <code>Gantt</code>.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>KPICard:</strong> Tarjetas de métricas con variación porcentual y mini <em>sparkline</em>.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>TreeView, Pagination &amp; ExpansionPanel:</strong> Árbol jerárquico, paginador M3 y acordeones de datos.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>Skeleton:</strong> Placeholders animados de carga para dashboards y tablas.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>Entradas avanzadas:</strong> <code>TextArea</code>, <code>RangeSlider</code>, <code>NumberInput</code>, <code>ColorPicker</code> y <code>FilePicker</code> nativo.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>Layout pro:</strong> <code>Grid</code> responsivo y <code>SplitView</code> redimensionable maestro-detalle.</span></li>
+        </ul>
+      </article>
+
+      <!-- Fase 7 -->
+      <article class="phase-card" data-status="done">
+        <div class="phase-header">
+          <h2>Fase 7 — Motor Universal de Estilos, QA Visual y Documentación Viva</h2>
+          <span class="status-pill status-done">✓ Completado</span>
+        </div>
+        <ul class="milestone-list">
+          <li><span class="check-dot done">✓</span><span><strong>Motor Universal de Estilos:</strong> <code>.bg()</code>, <code>.fg()</code>, <code>.accent()</code>, <code>.border()</code>, <code>.radius()</code>, <code>.elevation()</code>, <code>.opacity()</code> y <code>.min_size()</code>/<code>.max_size()</code> en los 59 controles.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>Animaciones Spring (M3 Expressive):</strong> Físicas de resorte reales (<code>SpringValue</code>) y <em>corner morphing</em> en botones.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>Contraste Medio y Alto M3:</strong> Esquemas oficiales <code>contrast="standard" | "medium" | "high"</code> en claro y oscuro.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>Multi-ventana nativa:</strong> Contextos OpenGL/Skia independientes con <code>win.open()</code>, <code>win.close()</code> y <code>ui.run(w1, w2)</code>.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>Tests visuales de píxeles (Skia):</strong> Verificación automática de bordes, hover, ripple y opacidad píxel a píxel.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>Documentación API con 118 capturas reales:</strong> Referencia parámetro por parámetro con renders <code>@2x</code> Light &amp; Dark.</span></li>
+        </ul>
+      </article>
+
+      <!-- Fase 8 -->
+      <article class="phase-card" data-status="done">
+        <div class="phase-header">
+          <h2>Fase 8 — Formularios Pro y Selección Avanzada</h2>
+          <span class="status-pill status-done">✓ Completado</span>
+        </div>
+        <ul class="milestone-list">
+          <li><span class="check-dot done">✓</span><span><strong>Autocomplete / ComboBox:</strong> <code>ui.autocomplete()</code> con búsqueda, filtrado instantáneo y navegación con teclado.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>TagInput / MultiSelect:</strong> <code>ui.tag_input()</code> con chips removibles inline, Enter/coma y Backspace.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>DateRangePicker:</strong> <code>ui.date_range_picker()</code> con calendario M3 y banda continua <em>Desde → Hasta</em>.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>OTPInput / PinInput:</strong> <code>ui.otp_input()</code> con casillas 2FA/PIN, auto-avance, pegado <code>Ctrl+V</code> y <code>on_complete</code>.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>Rating:</strong> <code>ui.rating()</code> vectorial con estrellas, hover preview y soporte de medias estrellas.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>DropZone:</strong> <code>ui.drop_zone()</code> con borde punteado Skia, selector nativo multi-archivo y lista de adjuntos.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>SignaturePad:</strong> <code>ui.signature_pad()</code> vectorial GPU para firma manuscrita con exportación a PNG.</span></li>
+        </ul>
+      </article>
+
+      <!-- Fase 9 -->
+      <article class="phase-card" data-status="done">
+        <div class="phase-header">
+          <h2>Fase 9 — Productividad, Flujos y Apps de Escritorio</h2>
+          <span class="status-pill status-done">✓ Completado</span>
+        </div>
+        <ul class="milestone-list">
+          <li><span class="check-dot done">✓</span><span><strong>Breadcrumbs:</strong> <code>ui.breadcrumbs()</code> jerárquico clickeable (<code>Inicio › Ventas › Facturas</code>).</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>Stepper / Wizard:</strong> <code>ui.stepper()</code> multi-paso con checks automáticos, error y navegación reactiva.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>Timeline:</strong> <code>ui.timeline()</code> vertical con nodos coloreados, íconos, descripción y timestamps.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>CommandPalette (Ctrl+K):</strong> <code>ui.command_palette()</code> flotante estilo VS Code con búsqueda en vivo y atajos.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>CalendarView:</strong> <code>ui.calendar_view()</code> mensual completo con navegación de meses y píldoras de eventos.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>KanbanBoard:</strong> <code>ui.kanban_board()</code> con tarjetas arrastrables (<em>drag &amp; drop</em>) en GPU.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>PropertyGrid / Inspector:</strong> <code>ui.property_grid()</code> clave-valor editable para herramientas creativas e IDEs.</span></li>
+        </ul>
+      </article>
+
+      <!-- Fase 10 -->
+      <article class="phase-card" data-status="done">
+        <div class="phase-header">
+          <h2>Fase 10 — Display, Feedback, Media y M3 Expressive</h2>
+          <span class="status-pill status-done">✓ Completado</span>
+        </div>
+        <ul class="milestone-list">
+          <li><span class="check-dot done">✓</span><span><strong>Alert / Banner:</strong> <code>ui.alert()</code> embebido con variantes <code>info</code>, <code>success</code>, <code>warning</code> y <code>error</code>, acción y cierre.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>Avatar &amp; AvatarGroup:</strong> <code>ui.avatar()</code> con presencia (<code>online/away/busy/offline</code>) y pila <code>+N</code>.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>Carousel (oficial M3):</strong> <code>ui.carousel()</code> horizontal <em>Hero + Peek</em> con flechas e indicadores de puntos.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>EmptyState:</strong> <code>ui.empty_state()</code> elegante para vistas vacías con ícono grande y botón CTA.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>MarkdownView &amp; CodeBlock:</strong> <code>ui.markdown_view()</code> nativo en Skia y <code>ui.code_block()</code> con números de línea y Copiar.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>StatusBar &amp; VectorCanvas:</strong> <code>ui.status_bar()</code> desktop y <code>ui.vector_canvas()</code> para dibujo Skia directo en GPU.</span></li>
+        </ul>
+      </article>
+
+      <!-- Fase 11 -->
+      <article class="phase-card" data-status="done">
+        <div class="phase-header">
+          <h2>Fase 11 — Gráficos BI Avanzados (18 tipos nativos GPU)</h2>
+          <span class="status-pill status-done">✓ Completado</span>
+        </div>
+        <ul class="milestone-list">
+          <li><span class="check-dot done">✓</span><span><strong>TreemapChart:</strong> <code>ui.treemap_chart()</code> con bloques proporcionales jerárquicos, porcentajes y hover.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>SankeyChart:</strong> <code>ui.sankey_chart()</code> con bandas cúbicas de Bézier proporcionales al flujo.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>WaterfallChart:</strong> <code>ui.waterfall_chart()</code> financiero (positivos, negativos y saldo acumulado).</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>BoxPlotChart:</strong> <code>ui.box_plot_chart()</code> estadístico con min, Q1, mediana, Q3 y max.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>Sparkline inline:</strong> <code>ui.sparkline()</code> compacto para incrustar en tablas, listas o tarjetas.</span></li>
+        </ul>
+      </article>
+
+      <!-- Fase 12 -->
+      <article class="phase-card" data-status="done">
+        <div class="phase-header">
+          <h2>Fase 12 — Suite Empresarial (ERP, DataGrid Pro, Async y PDF Nativo)</h2>
+          <span class="status-pill status-done">✓ Completado</span>
+        </div>
+        <ul class="milestone-list">
+          <li><span class="check-dot done">✓</span><span><strong>DataGrid Enterprise:</strong> <code>ui.data_grid()</code> virtualizado en <code>O(1)</code> para +100.000 filas, edición inline (doble clic / <code>F2</code>), filtro en vivo, totales (<code>SUM/AVG/COUNT/MIN/MAX</code>) y exportación CSV/PDF.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>Motor de Formularios &amp; Máscaras:</strong> Validación declarativa grupal (<code>ui.form()</code>, <code>ui.validators</code>, <code>is_dirty</code>) y <code>ui.masked_input()</code> (CUIT, teléfono, tarjeta, CBU, custom).</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>Concurrencia sin freeze:</strong> <code>ui.background()</code> y <code>ui.call_later()</code> con cola thread-safe al hilo GPU.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>Reportes e Impresión PDF Vectorial:</strong> <code>win.export_pdf()</code> y <code>ui.export_pdf()</code> usando el backend <code>skia.PDF</code> nativo (cero dependencias externas).</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>Atajos globales &amp; Error Guard:</strong> <code>win.shortcut("Ctrl+S", ...)</code> y <code>win.on_error</code> para evitar cierres abruptos.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>RBAC, i18n, Router &amp; Persistencia:</strong> <code>ui.auth()</code> + <code>.require_role()</code>/<code>.require_permission()</code>, <code>ui.i18n()</code> con formatos regionales, <code>ui.router()</code> con historial/guards y <code>ui.preferences()</code>.</span></li>
+        </ul>
+      </article>
+
+      <!-- Fase 13 -->
+      <article class="phase-card" data-status="done">
+        <div class="phase-header">
+          <h2>Fase 13 — Ecosistema, CLI, Distribución y v1.0.0</h2>
+          <span class="status-pill status-done">✓ Completado</span>
+        </div>
+        <ul class="milestone-list">
+          <li><span class="check-dot done">✓</span><span><strong>Preparación PyPI v1.0.0:</strong> <code>pyproject.toml</code> completo con metadatos, entry-point <code>quantumgui</code> y versión <code>1.0.0</code>.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>Empaquetado standalone (.exe):</strong> CLI <code>quantumgui build app.py</code> para compilar a ejecutable único con PyInstaller o Nuitka (colección automática de Skia, GLFW y OpenGL).</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>Hot-Reload y Plantillas:</strong> <code>quantumgui run app.py --watch</code> con recarga automática al guardar, <code>quantumgui new --template erp</code> y <code>quantumgui info</code>.</span></li>
+          <li><span class="check-dot done">✓</span><span><strong>Blueprint QuantumGUI-Go (v2.0):</strong> Arquitectura detallada en <code>docs/QUANTUMGUI_GO_BLUEPRINT.md</code> para replicar la librería 1:1 en Go como proyecto independiente.</span></li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    QuantumGUI · Librería GUI nativa Material Design 3 para Python · <a href="index.html">Inicio</a> · <a href="docs.html">Documentación API</a> · <a href="https://www.facebook.com/Quantum.CORP.1788" target="_blank" rel="noopener noreferrer">Contacto y consultas</a>
+  </footer>
+</body>
+</html>
